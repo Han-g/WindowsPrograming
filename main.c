@@ -30,10 +30,10 @@ void fifth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 void sixth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 void seventh(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-int	x = 0, y = 0, n;
+int	x = 0, y = 0, n = 0;
 static int count = 0, c = 0;
 static SIZE size;
-static TCHAR str[100];
+static TCHAR str[300];
 static TCHAR raw[30];
 static int yPos = 0;
 TCHAR lpOut[100];
@@ -377,12 +377,13 @@ void fifth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		}
 
 		else if (wParam == '0') exit(-1);
-		else raw[count++] = wParam;
-		raw[count] = '\0';
+		else str[count++] = wParam;
+		str[count] = '\0';
 
-		//strncpy(raw, str, 30);
+		_tcsncpy(raw, str, n+1); // strcat??d
 
 		if (count % 30 == 0) {
+			n = count / 30;
 			x = 0;
 			y += size.cy;
 		}
