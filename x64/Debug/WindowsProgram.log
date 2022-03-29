@@ -1,0 +1,12 @@
+﻿  main.c
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(55,16): warning C4244: 'return': 'WPARAM'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(60,12): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(64,20): warning C4047: '함수': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(64,16): warning C4024: 'memset': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(80,18): warning C4244: '=': 'WPARAM'에서 'TCHAR'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(66,11): warning C4101: 'text_color' :참조되지 않은 지역 변수입니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(68,9): warning C4101: 'y' :참조되지 않은 지역 변수입니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(68,6): warning C4101: 'x' :참조되지 않은 지역 변수입니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(68,12): warning C4101: 'n' :참조되지 않은 지역 변수입니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\main.c(67,11): warning C4101: 'BG_color' :참조되지 않은 지역 변수입니다.
+  WindowsProgram.vcxproj -> E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\WindowsProgram\x64\Debug\WindowsProgram.exe
