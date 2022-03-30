@@ -303,6 +303,8 @@ void forth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps;
 	HDC hDC;
 	RECT rect;
+	
+	
 	x = 100, y = 200;
 
 	switch (uMsg) {
