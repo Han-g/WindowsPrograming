@@ -1,4 +1,5 @@
-#define Case 5
+#define Case 6
+
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <windows.h>
@@ -31,10 +32,10 @@ void sixth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 void seventh(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 int	x = 0, y = 0, n = 0;
-static int count = 0, c = 0;
+static int count = 0, c = 0, r = 0;
 static SIZE size;
 static TCHAR str[300];
-static TCHAR raw[30];
+static TCHAR raw[10][30];
 static int yPos = 0;
 TCHAR lpOut[100];
 
@@ -304,7 +305,6 @@ void forth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	HDC hDC;
 	RECT rect;
 	
-	
 	x = 100, y = 200;
 
 	switch (uMsg) {
@@ -317,7 +317,7 @@ void forth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		if (wParam == VK_BACK) count--;
 		else if (wParam == VK_RETURN) {
 			count = 0;
-			yPos = yPos + 20;
+			y = y + size.cy;
 		}
 		else if (wParam == '0') exit(-1);
 		else str[count++] = wParam;
@@ -372,39 +372,47 @@ void fifth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		count = 0;
 		break;
 	case WM_CHAR:
-		if (wParam == VK_BACK) count--;
+		if (wParam == VK_BACK) {
+			raw[r][count % 30] = '\0';
+			if (count > 0) count--;
+			//if (count % 30 == 0 && y > 0) y -= size.cy;
+		}
 		else if (wParam == VK_RETURN) {
 			count = 0;
+			++r;
 			y += size.cy;
 		}
-
 		else if (wParam == '0') exit(-1);
-		else str[count++] = wParam;
-		str[count] = '\0';
+		else str[count] = wParam;
+		str[count+1] = '\0';
 
-		_tcsncpy(raw, str, n+1); // strcat??d
+		raw[r][count % 30] = str[count];
+		++count;
 
-		if (count % 30 == 0) {
-			n = count / 30;
-			x = 0;
-			y += size.cy;
-		}
-		if (count > 300)
+		if (count >= 300 - 1)
 		{
-			count = 0; x = 0; y = 0;
+			count = 0; size.cx = 0; size.cy = 0; r = 0;
 		}
+		else if (count % 30 == 0 && count != 0) {
+			y += size.cy;
+			++r;
+		}		
 		
 		InvalidateRect(hWnd, NULL, TRUE);
 		break;
 	case WM_PAINT:
 		hDC = BeginPaint(hWnd, &ps);
-		GetTextExtentPoint32(hDC, raw, lstrlen(raw), &size);
+		GetTextExtentPoint32(hDC, raw, lstrlen(raw[r]), &size);
+		//GetTextExtentPoint32(hDC, str, lstrlen(str), &size);
 		rect.left = 0;
 		rect.top = 0;
 		rect.right = 600;
 		rect.bottom = 500;
 
-		TextOut(hDC, x, y, raw, lstrlen(raw));
+		for (int i = 0; i < r+1; i++)
+		{
+			TextOut(hDC, 0, size.cy * i, raw[i], lstrlen(raw[i]));
+		}
 
 		SetCaretPos(size.cx, y);
 
@@ -424,6 +432,64 @@ void sixth(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps;
 	HDC hDC;
 	RECT rect;
+
+	switch (uMsg) {
+	case WM_CREATE:
+		count = 0;
+		int random_num = rand() % 8 + 2;
+		break;
+	case WM_CHAR:
+		if (wParam == VK_BACK) {
+			raw[r][count % 30] = '\0';
+			if (count > 0) count--;
+			//if (count % 30 == 0 && y > 0) y -= size.cy;
+		}
+		else if (wParam == VK_RETURN) {
+			count = 0;
+			++r;
+			y += size.cy;
+		}
+		else if (wParam == '0') exit(-1);
+		else str[count] = wParam;
+		str[count + 1] = '\0';
+
+		raw[r][count % 30] = str[count];
+		++count;
+
+		if (count >= 300 - 1)
+		{
+			count = 0; size.cx = 0; size.cy = 0; r = 0;
+		}
+		else if (count % 30 == 0 && count != 0) {
+			y += size.cy;
+			++r;
+		}
+
+		InvalidateRect(hWnd, NULL, TRUE);
+		break;
+	case WM_PAINT:
+		hDC = BeginPaint(hWnd, &ps);
+		GetTextExtentPoint32(hDC, raw, lstrlen(raw[r]), &size);
+		//GetTextExtentPoint32(hDC, str, lstrlen(str), &size);
+		rect.left = 0;
+		rect.top = 0;
+		rect.right = 600;
+		rect.bottom = 500;
+
+		for (int i = 0; i < r + 1; i++)
+		{
+			TextOut(hDC, 0, size.cy * i, raw[i], lstrlen(raw[i]));
+		}
+
+		SetCaretPos(size.cx, y);
+
+		EndPaint(hWnd, &ps);
+		break;
+
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	}
 }
 
 void seventh(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
