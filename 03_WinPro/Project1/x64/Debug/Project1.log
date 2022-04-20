@@ -1,0 +1,8 @@
+﻿  4-2.c
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project1\4-2.c(58,16): warning C4244: 'return': 'WPARAM'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project1\4-2.c(73,12): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project1\4-2.c(186,36): warning C4133: '함수': 'a *'과(와) 'const RECT *' 사이의 형식이 호환되지 않습니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project1\4-2.c(186,50): warning C4047: '함수': 'HBRUSH'의 간접 참조 수준이 'unsigned long'과(와) 다릅니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project1\4-2.c(186,38): warning C4024: 'FrameRect': 형식 및 실제 매개 변수 3의 형식이 서로 다릅니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project1\4-2.c(69,13): warning C4101: 'curTime' :참조되지 않은 지역 변수입니다.
+  Project1.vcxproj -> E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project1\x64\Debug\Project1.exe

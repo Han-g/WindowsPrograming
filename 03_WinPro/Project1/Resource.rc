@@ -1,0 +1,101 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어(대한민국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU
+BEGIN
+    POPUP "Game"
+    BEGIN
+        MENUITEM "start",                       ID_GAME_START
+        MENUITEM "reset",                       ID_GAME_RESET
+        MENUITEM "end",                         ID_GAME_END
+        MENUITEM "pause",                       ID_GAME_PAUSE
+    END
+    POPUP "Speed"
+    BEGIN
+        MENUITEM "Fast",                        ID_SPEED_FASTER
+        MENUITEM "Slow",                        ID_SPEED_SLOWER
+        MENUITEM "Medium",                      ID_SPEED_MEDIUM
+    END
+    POPUP "Color"
+    BEGIN
+        MENUITEM "RED",                         ID_COLOR_RED
+        MENUITEM "GREEN",                       ID_COLOR_GREEN
+        MENUITEM "BLUE",                        ID_COLOR_BLUE
+    END
+    POPUP "Size"
+    BEGIN
+        MENUITEM "Big",                         ID_SIZE_BIG
+        MENUITEM "Small",                       ID_SIZE_SMALL
+    END
+    POPUP "Block"
+    BEGIN
+        MENUITEM "3",                           ID_BLOCK_3
+        MENUITEM "4",                           ID_BLOCK_4
+        MENUITEM "5",                           ID_BLOCK_5
+    END
+END
+
+#endif    // 한국어(대한민국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

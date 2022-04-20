@@ -1,0 +1,9 @@
+﻿  2-11.c
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project2\2-11.c(64,16): warning C4244: 'return': 'WPARAM'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project2\2-11.c(69,12): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project2\2-11.c(73,17): warning C4047: '함수': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project2\2-11.c(73,13): warning C4024: 'memset': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project2\2-11.c(253,23): warning C4133: '함수': 'POINT [3]'과(와) 'const POINT *' 사이의 형식이 호환되지 않습니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project2\2-11.c(294,24): warning C4133: '함수': 'POINT [3]'과(와) 'const POINT *' 사이의 형식이 호환되지 않습니다.
+E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project2\2-11.c(77,7): warning C4101: 'rect' :참조되지 않은 지역 변수입니다.
+  Project2.vcxproj -> E:\강의자료\OneDrive - 한국산업기술대학교\4학기\윈플\03_WinPro\Project2\x64\Debug\Project2.exe
